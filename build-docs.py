@@ -7,7 +7,7 @@ from pathlib import Path
 sys.path.insert(0, "/tmp/mdenv/lib/python3.12/site-packages")
 import markdown  # noqa: E402
 
-SRC = Path.home() / "workspace" / "augustinnovations-docs-package"
+SRC = Path.home() / "workspace" / "augustinnovations-site" / "documents-src"
 OUT = Path.home() / "workspace" / "augustinnovations-site" / "documents"
 OUT.mkdir(parents=True, exist_ok=True)
 
