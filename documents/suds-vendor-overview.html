@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SUDS — Vendor Overview for Buyers — AugustInnovations LLC</title>
+<meta name="description" content="What SUDS is, its deployment and isolation model, security posture, published pricing, and status.">
+<link rel="canonical" href="https://augustinnovations.io/documents/suds-vendor-overview.html">
+<link rel="icon" type="image/svg+xml" href="../logo.svg">
+<style>
+  :root{--navy:#16324A; --navy-deep:#0F2436; --teal:#177A6B; --teal-dark:#11604F;
+    --gold:#C9902E; --ink:#1C2733; --muted:#5A6B7A; --paper:#F7F5F0; --card:#FFFFFF; --line:#E2DDD2}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.65}
+  h1,h2,h3,.sans{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+  a{color:var(--teal-dark)}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{background:var(--navy);color:#fff}
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:8px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand img{width:34px;height:34px}
+  .brand .mark{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:800;font-size:20px;color:#fff}
+  .brand .mark span{color:var(--gold)}
+  nav a{color:#E7EEF3;text-decoration:none;margin-left:20px;font-size:14.5px;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+  nav a:hover{color:var(--gold)}
+  main{padding:38px 0 10px}
+  main h1{font-size:31px;color:var(--navy);margin:0 0 14px;line-height:1.25}
+  main h2{font-size:22px;color:var(--navy);margin:30px 0 8px}
+  main h3{font-size:18px;color:var(--navy);margin:22px 0 6px}
+  table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px}
+  th,td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+  th{background:#EFECE3}
+  .crumb{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13.5px;color:var(--muted);margin-bottom:18px}
+  footer{background:var(--navy-deep);color:#B9C9D6;margin-top:56px;padding:28px 0 34px;font-size:14px}
+  footer a{color:#E7EEF3}
+  .doclist{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 26px 18px}
+  .doclist h3{margin:20px 0 2px}
+  .doclist p{margin:0 0 6px;color:var(--muted);font-size:15.5px}
+</style>
+</head>
+<body>
+<header><div class="wrap topbar">
+  <div class="brand"><img src="../logo.svg" alt=""><div class="mark">August<span>Innovations</span></div></div>
+  <nav><a href="../index.html">Home</a><a href="index.html">Documents</a><a href="../index.html#contact">Contact</a></nav>
+</div></header>
+<main><div class="wrap">
+<p class="crumb"><a href="../index.html">AugustInnovations LLC</a> · <a href="index.html">Documents</a> · SUDS — Vendor Overview for Buyers</p>
+<h1>SUDS — Vendor Overview for Buyers</h1>
+<p><strong>AugustInnovations LLC</strong> · info@suds.systems · sudsdata.com
+<strong>Prepared:</strong> October 23, 2026</p>
+<h2>What SUDS is</h2>
+<p>SUDS is the hosted data platform for California harm-reduction and substance-use disorder (SUD) programs. It runs the daily work of a program in one system:</p>
+<ul>
+<li>Street outreach encounters — named or anonymous, with offline capture</li>
+<li>Naloxone and supply distribution tracked by lot</li>
+<li>Referrals and follow-up</li>
+<li>Consent management built for 42 CFR Part 2</li>
+<li>Reporting for CalOMS Tx and opioid-settlement requirements</li>
+</ul>
+<p>SUDS is built and operated by AugustInnovations LLC, a California LLC (Entity No. 202253018246; D-U-N-S 12-343-3746) whose operator is a practicing Clinical Application Specialist II.</p>
+<h2>Deployment model</h2>
+<p>SUDS is multi-tenant software operated by AugustInnovations on one managed fleet — with strict per-tenant isolation:</p>
+<ul>
+<li>Each tenant organization gets its <strong>own instance/process, its own database, its own encryption keys, and its own subdomain</strong></li>
+<li>Tenants never share a database with another organization</li>
+<li>Hosting is included in every tier; there is nothing for the buyer to install or maintain</li>
+</ul>
+<h2>Security posture</h2>
+<ul>
+<li>Encryption at rest for tenant data</li>
+<li>Tamper-evident audit logging of access and changes</li>
+<li>42 CFR Part 2 consent workflows enforced in the application, not left to policy</li>
+<li>Role-based access with multi-factor authentication</li>
+<li>An internal security self-assessment has been completed and its findings remediated; an <strong>independent third-party penetration test is in procurement</strong> (vendor proposals due October 27, 2026, testing window November 2026). AugustInnovations does not claim a completed independent penetration test until that engagement concludes.</li>
+</ul>
+<h2>Pricing (published, hosting included)</h2>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Price</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pilot</strong></td>
+<td><strong>$14,500 flat</strong></td>
+<td>90-day pilot; credited in full toward year one on conversion</td>
+</tr>
+<tr>
+<td><strong>Program</strong></td>
+<td><strong>$24,500 / year</strong></td>
+<td>Single program</td>
+</tr>
+<tr>
+<td><strong>Multi-Site</strong></td>
+<td><strong>$49,500 / year</strong></td>
+<td>Multiple sites under one organization</td>
+</tr>
+<tr>
+<td><strong>County-Wide</strong></td>
+<td><strong>$98,000 / year</strong></td>
+<td>County-wide deployment</td>
+</tr>
+</tbody>
+</table>
+<h2>Status</h2>
+<ul>
+<li><strong>Version 1.26.0 is live in production</strong> (released October 2026), operated by AugustInnovations LLC.</li>
+<li>A free single-device browser version of SUDS is available for real program use and evaluation.</li>
+<li>Customer agreements (licence &amp; subscription agreement, BAA/QSOA where applicable) are prepared and available on request; they are being finalized with counsel before the first paid pilot.</li>
+<li>Cyber liability / technology E&amp;O insurance quotations are in preparation; coverage will be bound before handling production customer data under contract.</li>
+</ul>
+<h2>Contact</h2>
+<p>AugustInnovations LLC · Plumas Lake, California
+<strong>info@suds.systems</strong> · sudsdata.com · augustinnovations.io</p>
+</div></main>
+<footer><div class="wrap">
+<p>© 2026 AugustInnovations LLC · Plumas Lake, California · D-U-N-S® 12-343-3746 · <a href="mailto:info@suds.systems">info@suds.systems</a></p>
+</div></footer>
+</body>
+</html>

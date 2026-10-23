@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rules of Engagement — Template — AugustInnovations LLC</title>
+<meta name="description" content="The standard rules governing every Clinical Perimeter engagement, executed before testing begins.">
+<link rel="canonical" href="https://augustinnovations.io/documents/rules-of-engagement-template.html">
+<link rel="icon" type="image/svg+xml" href="../logo.svg">
+<style>
+  :root{--navy:#16324A; --navy-deep:#0F2436; --teal:#177A6B; --teal-dark:#11604F;
+    --gold:#C9902E; --ink:#1C2733; --muted:#5A6B7A; --paper:#F7F5F0; --card:#FFFFFF; --line:#E2DDD2}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.65}
+  h1,h2,h3,.sans{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+  a{color:var(--teal-dark)}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{background:var(--navy);color:#fff}
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:8px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand img{width:34px;height:34px}
+  .brand .mark{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:800;font-size:20px;color:#fff}
+  .brand .mark span{color:var(--gold)}
+  nav a{color:#E7EEF3;text-decoration:none;margin-left:20px;font-size:14.5px;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+  nav a:hover{color:var(--gold)}
+  main{padding:38px 0 10px}
+  main h1{font-size:31px;color:var(--navy);margin:0 0 14px;line-height:1.25}
+  main h2{font-size:22px;color:var(--navy);margin:30px 0 8px}
+  main h3{font-size:18px;color:var(--navy);margin:22px 0 6px}
+  table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px}
+  th,td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+  th{background:#EFECE3}
+  .crumb{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13.5px;color:var(--muted);margin-bottom:18px}
+  footer{background:var(--navy-deep);color:#B9C9D6;margin-top:56px;padding:28px 0 34px;font-size:14px}
+  footer a{color:#E7EEF3}
+  .doclist{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 26px 18px}
+  .doclist h3{margin:20px 0 2px}
+  .doclist p{margin:0 0 6px;color:var(--muted);font-size:15.5px}
+</style>
+</head>
+<body>
+<header><div class="wrap topbar">
+  <div class="brand"><img src="../logo.svg" alt=""><div class="mark">August<span>Innovations</span></div></div>
+  <nav><a href="../index.html">Home</a><a href="index.html">Documents</a><a href="../index.html#contact">Contact</a></nav>
+</div></header>
+<main><div class="wrap">
+<p class="crumb"><a href="../index.html">AugustInnovations LLC</a> · <a href="index.html">Documents</a> · Rules of Engagement — Template</p>
+<h1>Rules of Engagement — Web Application Penetration Test</h1>
+<p><strong>[TEMPLATE — complete all bracketed fields and have both parties sign before any testing begins. No testing is authorized until the companion Testing Authorization is also signed.]</strong></p>
+<p><strong>Provider:</strong> AugustInnovations LLC dba Clinical Perimeter ("Clinical Perimeter"), Plumas Lake, California · hello@clinicalperimeter.com
+<strong>Client:</strong> [CLIENT LEGAL NAME] ("Client")
+<strong>Engagement reference:</strong> [ENGAGEMENT ID, e.g., CP-2026-___]
+<strong>Date:</strong> [DATE]</p>
+<h2>1. Scope</h2>
+<ul>
+<li><strong>Application in scope:</strong> [APPLICATION NAME], staging environment only</li>
+<li><strong>In-scope URLs / hostnames:</strong> [LIST EVERY HOSTNAME, SUBDOMAIN, AND API BASE URL]</li>
+<li><strong>In-scope accounts/roles:</strong> [LIST TEST ACCOUNTS AND ROLES TO BE PROVIDED BY CLIENT]</li>
+<li><strong>Testing approach:</strong> White-box / gray-box (circle or delete one in the executed copy)</li>
+<li><strong>Explicitly out of scope:</strong> production systems and any system containing real protected health information (PHI); denial-of-service and load testing; social engineering and phishing; physical security; internal-network, wireless, and mobile-application testing; any host, account, or system not listed above; [ADDITIONAL CLIENT-SPECIFIC EXCLUSIONS]</li>
+</ul>
+<h2>2. Testing window</h2>
+<ul>
+<li><strong>Start:</strong> [DATE AND TIME, WITH TIME ZONE]</li>
+<li><strong>End:</strong> [DATE AND TIME, WITH TIME ZONE]</li>
+<li>Testing occurs only inside this window. Any extension requires written agreement (email is sufficient) from both parties before the original window closes.</li>
+</ul>
+<h2>3. Authorized techniques</h2>
+<p>Within scope and window, Clinical Perimeter may: probe and enumerate the application and its APIs; attempt authentication and session attacks against test accounts; test authorization boundaries between roles and tenants using test accounts; submit malicious and malformed input to test validation and injection defenses; inspect responses, exports, error messages, and accessible logs for PHI exposure; and use automated scanners and manual techniques consistent with the OWASP Web Security Testing Guide.</p>
+<h2>4. Prohibited actions</h2>
+<p>Clinical Perimeter will not: access, copy, or retain real PHI (if real PHI is encountered, testing on that path stops immediately and §8 applies); perform denial-of-service, load, or stress testing; attempt social engineering or phishing; test any out-of-scope system; exfiltrate data beyond the minimum evidence needed to document a finding; or make persistent changes to the staging environment beyond what a finding's reproduction requires (any such change is documented and reported the same day).</p>
+<h2>5. Test data and accounts</h2>
+<p>Client provides test accounts and a staging environment loaded with <strong>synthetic data only</strong>. Client confirms the staging environment contains no real PHI at the start of the window: [CLIENT INITIALS]. Credentials are exchanged through [SECURE CHANNEL — NOT EMAIL] and are rotated or revoked by Client at the end of the engagement.</p>
+<h2>6. Contacts and escalation</h2>
+<ul>
+<li><strong>Client technical contact:</strong> [NAME, EMAIL, PHONE]</li>
+<li><strong>Client escalation contact (incidents):</strong> [NAME, EMAIL, PHONE]</li>
+<li><strong>Clinical Perimeter tester:</strong> Taylor Augustin, hello@clinicalperimeter.com, [PHONE]</li>
+<li>Either party may pause testing immediately by contacting the other party's contact above. A pause is confirmed in writing (email is sufficient).</li>
+</ul>
+<h2>7. Handling of findings and evidence</h2>
+<p>Evidence is captured only as needed to document findings, stored encrypted by Clinical Perimeter, and handled per Clinical Perimeter's evidence-handling procedure. Findings are confidential to Client and are disclosed only to Client's named recipients: [RECIPIENT NAMES/ROLES]. Evidence retention and destruction follow the engagement agreement: [RETENTION PERIOD / DESTRUCTION TERMS, or "per engagement agreement dated [DATE]"].</p>
+<h2>8. Incident procedure</h2>
+<p>If testing appears to cause instability, data exposure, or any impact beyond the staging environment, the tester stops, preserves minimal evidence, and notifies the Client escalation contact <strong>immediately</strong> by phone and email. Testing resumes only with Client's written approval.</p>
+<h2>9. Deliverables</h2>
+<p>Full findings report, attestation letter, 60-minute remediation call, and one retest within 30 days of report delivery — per the engagement agreement / service sheet dated [DATE]. Report delivery within 10 business days of the testing window closing.</p>
+<h2>10. Signatures</h2>
+<p>Agreed and accepted:</p>
+<p><strong>Clinical Perimeter</strong> — AugustInnovations LLC dba Clinical Perimeter
+Signature: ______________________________ Name: Taylor Augustin, [TITLE] Date: __________</p>
+<p><strong>Client</strong> — [CLIENT LEGAL NAME]
+Signature: ______________________________ Name: [NAME], [TITLE] Date: __________</p>
+</div></main>
+<footer><div class="wrap">
+<p>© 2026 AugustInnovations LLC · Plumas Lake, California · D-U-N-S® 12-343-3746 · <a href="mailto:info@suds.systems">info@suds.systems</a></p>
+</div></footer>
+</body>
+</html>

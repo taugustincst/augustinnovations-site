@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSeed — Product Sheet — AugustInnovations LLC</title>
+<meta name="description" content="Local-only clinical de-identification for Windows: formats, safeguards, license terms, and pricing.">
+<link rel="canonical" href="https://augustinnovations.io/documents/cseed-product-sheet.html">
+<link rel="icon" type="image/svg+xml" href="../logo.svg">
+<style>
+  :root{--navy:#16324A; --navy-deep:#0F2436; --teal:#177A6B; --teal-dark:#11604F;
+    --gold:#C9902E; --ink:#1C2733; --muted:#5A6B7A; --paper:#F7F5F0; --card:#FFFFFF; --line:#E2DDD2}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.65}
+  h1,h2,h3,.sans{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+  a{color:var(--teal-dark)}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{background:var(--navy);color:#fff}
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:8px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand img{width:34px;height:34px}
+  .brand .mark{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:800;font-size:20px;color:#fff}
+  .brand .mark span{color:var(--gold)}
+  nav a{color:#E7EEF3;text-decoration:none;margin-left:20px;font-size:14.5px;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+  nav a:hover{color:var(--gold)}
+  main{padding:38px 0 10px}
+  main h1{font-size:31px;color:var(--navy);margin:0 0 14px;line-height:1.25}
+  main h2{font-size:22px;color:var(--navy);margin:30px 0 8px}
+  main h3{font-size:18px;color:var(--navy);margin:22px 0 6px}
+  table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px}
+  th,td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+  th{background:#EFECE3}
+  .crumb{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13.5px;color:var(--muted);margin-bottom:18px}
+  footer{background:var(--navy-deep);color:#B9C9D6;margin-top:56px;padding:28px 0 34px;font-size:14px}
+  footer a{color:#E7EEF3}
+  .doclist{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 26px 18px}
+  .doclist h3{margin:20px 0 2px}
+  .doclist p{margin:0 0 6px;color:var(--muted);font-size:15.5px}
+</style>
+</head>
+<body>
+<header><div class="wrap topbar">
+  <div class="brand"><img src="../logo.svg" alt=""><div class="mark">August<span>Innovations</span></div></div>
+  <nav><a href="../index.html">Home</a><a href="index.html">Documents</a><a href="../index.html#contact">Contact</a></nav>
+</div></header>
+<main><div class="wrap">
+<p class="crumb"><a href="../index.html">AugustInnovations LLC</a> · <a href="index.html">Documents</a> · CSeed — Product Sheet</p>
+<h1>CSeed — Product Fact Sheet</h1>
+<p><strong>AugustInnovations LLC</strong> · <strong>Current version:</strong> 1.0.1 (Windows)
+<strong>Prepared:</strong> October 23, 2026</p>
+<h2>What CSeed does</h2>
+<p>CSeed de-identifies clinical documents and seeds realistic synthetic data in place of the real identifiers — so clinical documents can be used safely for software testing, demos, training, and workflow development. It runs <strong>entirely on the user's own Windows machine</strong>: no cloud, no uploads, no data ever leaves the workstation.</p>
+<h2>Key facts</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Platform</strong></td>
+<td>Windows (single self-contained application)</td>
+</tr>
+<tr>
+<td><strong>Input formats</strong></td>
+<td>DOCX, PDF (including OCR of scanned pages via bundled Tesseract), TXT, CSV, HL7, FHIR</td>
+</tr>
+<tr>
+<td><strong>Consistency</strong></td>
+<td>The same person maps to the same fake identity across every document in a batch — names, dates, MRNs, addresses, and contacts stay internally consistent</td>
+</tr>
+<tr>
+<td><strong>Crosswalk</strong></td>
+<td>The real↔fake mapping is saved only as an AES-256-GCM encrypted file under a per-batch passphrase chosen by the user</td>
+</tr>
+<tr>
+<td><strong>Leak check</strong></td>
+<td>Output is verified against the source identifiers before release; a run that fails its leak check is stamped FAILED and is not shareable</td>
+</tr>
+<tr>
+<td><strong>Dates</strong></td>
+<td>Dates are shifted consistently, preserving intervals and document chronology</td>
+</tr>
+</tbody>
+</table>
+<h2>License terms (summary — the license file controls)</h2>
+<ul>
+<li>Per-organization, perpetual license for CSeed v1.x</li>
+<li>Up to <strong>5 workstations</strong> owned or controlled by the purchasing organization</li>
+<li>No redistribution, resale, sublicensing, or sharing outside the purchasing organization</li>
+<li>All v1.x updates included while v1 is current</li>
+<li>Provided "as is"; CSeed is a pseudonymization aid for test/demo/training data — it is <strong>not</strong> HIPAA Safe Harbor de-identification or Expert Certification, and users must review output before sharing</li>
+<li><strong>14-day refunds</strong>, for any reason, via the storefront</li>
+<li>Support by email on a best-effort basis; no SLA</li>
+</ul>
+<h2>Price</h2>
+<ul>
+<li><strong>$149</strong> one-time — launch price <strong>$99</strong></li>
+</ul>
+<h2>Known limitations (stated plainly)</h2>
+<ul>
+<li><strong>Scanned-image PDFs are still being hardened.</strong> Documents with a real text layer pass CSeed's leak check cleanly on the current version. Pure scanned-image documents (OCR-only path) are under active remediation: a recent scanned test file still leaked some identifiers on that path and was correctly flagged FAILED by CSeed's own verifier. Treat scanned-image PDFs as <strong>not yet supported</strong> until a future release notes otherwise.</li>
+<li>The installer is not code-signed, so Windows SmartScreen shows a warning on first run.</li>
+<li>Handwriting recognition is limited; low-confidence OCR is flagged for review rather than silently passed.</li>
+</ul>
+<h2>Validation</h2>
+<p>Version 1.0.1 passed a 364-test automated suite and a full re-run on a 55-page real-world-format EHR test document with zero leaked identifier kinds. Validation notes are available on request.</p>
+</div></main>
+<footer><div class="wrap">
+<p>© 2026 AugustInnovations LLC · Plumas Lake, California · D-U-N-S® 12-343-3746 · <a href="mailto:info@suds.systems">info@suds.systems</a></p>
+</div></footer>
+</body>
+</html>
