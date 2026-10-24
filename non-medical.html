@@ -78,7 +78,7 @@
       <a href="index.html#about">About</a>
       <a href="non-medical.html">Non-Medical Software</a>
       <a href="documents/index.html">Documents</a>
-      <a class="cta" href="index.html#contact">Contact</a>
+      <a class="cta" href="index.html#contact" data-lead-open data-lead-interest="Elderon support">Contact</a>
     </nav>
   </div>
 </header>
@@ -110,6 +110,25 @@
   </div>
 </section>
 
+<section style="padding-top:6px">
+  <div class="wrap">
+    <p class="kicker">Elderon support</p>
+    <h2>Questions about Elderon?</h2>
+    <p class="sub">Bug reports, feedback, and Google Play edition questions — send us a message and we'll reply by email.</p>
+    <form class="lead-form" data-lead-form data-inbox="elderon@augustinnovations.io" data-site="augustinnovations.io" novalidate>
+      <div class="lf-grid">
+        <label class="lf-field"><span>Your name *</span><input type="text" name="name" autocomplete="name" required></label>
+        <label class="lf-field"><span>Email *</span><input type="email" name="email" autocomplete="email" required></label>
+        <label class="lf-field"><span>Organization (optional)</span><input type="text" name="org" autocomplete="organization"></label>
+        <label class="lf-field"><span>I'm interested in</span><select name="interest"><option selected>Elderon support</option><option>General inquiry</option></select></label>
+      </div>
+      <label class="lf-field"><span>Message *</span><textarea name="message" rows="5" required></textarea></label>
+      <button type="submit" class="lf-send">Send message</button>
+      <p class="lf-note">Sending opens your email app with your message addressed to elderon@augustinnovations.io.</p>
+    </form>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <p><img class="logo" src="logo.svg" alt="">© 2026 AugustInnovations LLC · Plumas Lake, California · D-U-N-S® 12-343-3746</p>
@@ -117,5 +136,6 @@
   </div>
 </footer>
 
+<script src="lead.js" data-inbox="elderon@augustinnovations.io" data-brand="AugustInnovations LLC" data-site="augustinnovations.io" data-interests="Elderon support|General inquiry" data-interest="Elderon support" data-head="#16324A" data-accent="#C9902E" data-accent-ink="#0F2436"></script>
 </body>
 </html>

@@ -86,7 +86,7 @@
       <a href="#about">About</a>
       <a href="non-medical.html">Non-Medical Software</a>
       <a href="documents/index.html">Documents</a>
-      <a class="cta" href="#contact">Contact</a>
+      <a class="cta" href="#contact" data-lead-open>Contact</a>
     </nav>
   </div>
 </header>
@@ -97,7 +97,7 @@
     <p class="lede">AugustInnovations LLC is a California software company founded and run by a clinical application specialist and Gen AI engineer. We build and operate production software for healthcare programs, test the security of healthcare software, and ship tools that respect how clinical work actually happens.</p>
     <div class="actions">
       <a class="btn-gold" href="#products">See the products</a>
-      <a class="btn-ghost" href="#contact">Work with us</a>
+      <a class="btn-ghost" href="#contact" data-lead-open data-lead-interest="Consulting">Work with us</a>
     </div>
     <p class="note">California LLC, formed 2022 · D-U-N-S® 12-343-3746</p>
   </div>
@@ -114,23 +114,27 @@
         <h3><a href="https://sudsdata.com/">SUDS</a></h3>
         <p>The data platform for California harm-reduction and substance-use disorder programs: street outreach, naloxone and supplies tracked by lot, referrals, 42 CFR Part 2 consent, and CalOMS and opioid-settlement reporting. Single-tenant deployments, encrypted, audit-logged, and live in production.</p>
         <p class="go"><a href="https://sudsdata.com/">sudsdata.com →</a></p>
+        <p class="go"><a href="#contact" data-lead-open data-lead-interest="SUDS">Message us →</a></p>
       </div>
       <div class="card">
         <span class="tag">Security</span>
         <h3><a href="https://clinicalperimeter.com/">Clinical Perimeter</a></h3>
         <p>Our security practice: white/gray-box web application penetration tests for healthcare software vendors, performed under signed authorization, on staging systems, with the guardrails a regulated industry demands.</p>
         <p class="go"><a href="https://clinicalperimeter.com/">clinicalperimeter.com →</a></p>
+        <p class="go"><a href="#contact" data-lead-open data-lead-interest="Clinical Perimeter">Message us →</a></p>
       </div>
       <div class="card">
         <span class="tag">Privacy tooling</span>
         <h3>CSeed</h3>
         <p>A local-only Windows application that de-identifies clinical documents — DOCX, PDF (with OCR), TXT, CSV, HL7, and FHIR — and seeds realistic synthetic data in their place, with consistent fake identities across a batch and an encrypted crosswalk. Nothing ever leaves the user's machine.</p>
+        <p class="go"><a href="#contact" data-lead-open data-lead-interest="CSeed">Message us →</a></p>
       </div>
       <div class="card">
         <span class="tag">Clinical informatics</span>
         <h3><a href="https://releasereaper.io/">ReleaseReaper</a></h3>
         <p>EMR release notes go in raw; change intelligence comes out. ReleaseReaper extracts every change from vendor release notes, categorizes and domain-tags it, scores its operational impact, and leads with the safety signals — delivered as a Clinical Ops Brief and exports your teams already use. Built from seven-plus years of living through EHR upgrade cycles.</p>
         <p class="go"><a href="https://releasereaper.io/">releasereaper.io →</a></p>
+        <p class="go"><a href="#contact" data-lead-open data-lead-interest="ReleaseReaper">Message us →</a></p>
       </div>
     </div>
   </div>
@@ -176,6 +180,18 @@
     <p class="sub">For product questions, pilot inquiries, security testing, or consulting engagements:<br>
     <b>Email:</b> <a href="mailto:info@suds.systems">info@suds.systems</a><br>
     <b>Location:</b> Plumas Lake, California</p>
+    <p class="sub" style="margin-top:26px">Or send a message right here — we reply by email:</p>
+    <form class="lead-form" data-lead-form data-inbox="info@suds.systems" data-site="augustinnovations.io" novalidate>
+      <div class="lf-grid">
+        <label class="lf-field"><span>Your name *</span><input type="text" name="name" autocomplete="name" required></label>
+        <label class="lf-field"><span>Email *</span><input type="email" name="email" autocomplete="email" required></label>
+        <label class="lf-field"><span>Organization (optional)</span><input type="text" name="org" autocomplete="organization"></label>
+        <label class="lf-field"><span>I'm interested in</span><select name="interest"><option selected>General inquiry</option><option>SUDS</option><option>Clinical Perimeter</option><option>CSeed</option><option>ReleaseReaper</option><option>Consulting</option></select></label>
+      </div>
+      <label class="lf-field"><span>Message *</span><textarea name="message" rows="6" required></textarea></label>
+      <button type="submit" class="lf-send">Send message</button>
+      <p class="lf-note">Sending opens your email app with your message addressed to info@suds.systems.</p>
+    </form>
   </div>
 </section>
 
@@ -186,5 +202,6 @@
   </div>
 </footer>
 
+<script src="lead.js" data-inbox="info@suds.systems" data-brand="AugustInnovations LLC" data-site="augustinnovations.io" data-interests="General inquiry|SUDS|Clinical Perimeter|CSeed|ReleaseReaper|Consulting" data-interest="General inquiry" data-head="#16324A" data-accent="#C9902E" data-accent-ink="#0F2436"></script>
 </body>
 </html>
