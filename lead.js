@@ -1,6 +1,7 @@
 /* lead.js — shared lead messenger + info-request forms for AugustInnovations sites.
-   Static sites: delivery is via the visitor's own email app (mailto compose),
-   with a copy-to-clipboard fallback. No backend, no third-party services. */
+   Primary delivery: FormSubmit AJAX POST (no account; submissions land in the
+   owner's inbox). Automatic fallback if that fails: the visitor's own email
+   app (mailto compose) plus a copy-to-clipboard fallback. */
 (function () {
   'use strict';
   var script = document.currentScript;
@@ -73,6 +74,7 @@
   document.head.appendChild(style);
 
   /* ---------- shared lead logic ---------- */
+  var FORMSUBMIT_ENDPOINT = 'https://formsubmit.co/ajax/taugustincst@gmail.com';
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   function fieldError(input, msg) {
@@ -182,6 +184,19 @@
     return box;
   }
 
+  function showSentConfirmation(container, ctx) {
+    container.innerHTML = '';
+    var box = document.createElement('div');
+    box.className = 'lead-confirm';
+    var h = document.createElement('h3');
+    h.textContent = 'Message sent — we\'ll reply by email.';
+    var p = document.createElement('p');
+    p.textContent = 'Thanks for getting in touch — your message is on its way to our inbox.';
+    box.appendChild(h); box.appendChild(p);
+    container.appendChild(box);
+    return box;
+  }
+
   function maybeSeed(form, seedKey, seedInterest) {
     if (!seedKey || !SEEDS[seedKey]) return;
     var sel = form.querySelector('[name="interest"]');
@@ -203,18 +218,56 @@
     form.querySelectorAll('input,select,textarea').forEach(function (input) {
       input.addEventListener('input', function () { fieldError(input, ''); });
     });
+    var sending = false;
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (sending) return;
       var values = validateAndRead(form);
       if (!values) return;
       var lead = compose(ctx, values);
-      window.location.href = lead.mailto;
-      var parent = form.parentNode;
-      form.hidden = true;
-      var holder = document.createElement('div');
-      parent.insertBefore(holder, form.nextSibling);
-      showConfirmation(holder, ctx, lead);
-      holder.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      var sendBtn = form.querySelector('button[type="submit"]');
+      function swapIn(buildFn) {
+        var parent = form.parentNode;
+        form.hidden = true;
+        var holder = document.createElement('div');
+        parent.insertBefore(holder, form.nextSibling);
+        buildFn(holder);
+        holder.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      }
+      function fallback() {
+        window.location.href = lead.mailto;
+        swapIn(function (holder) { showConfirmation(holder, ctx, lead); });
+      }
+      if (!window.fetch) { fallback(); return; }
+      sending = true;
+      if (sendBtn) sendBtn.disabled = true;
+      var payload = {
+        name: values.name,
+        email: values.email,
+        _replyto: values.email,
+        organization: values.org,
+        interest: values.interest || 'General inquiry',
+        message: values.message,
+        _subject: lead.subject,
+        _template: 'table',
+        _captcha: 'false'
+      };
+      fetch(FORMSUBMIT_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function (res) {
+        if (!res.ok) throw new Error('http ' + res.status);
+        return res.json();
+      }).then(function (data) {
+        if (data && (data.success === true || data.success === 'true')) {
+          swapIn(function (holder) { showSentConfirmation(holder, ctx); });
+        } else {
+          fallback();
+        }
+      }).catch(function () {
+        fallback();
+      });
     });
   }
 
@@ -285,7 +338,7 @@
     '<label class="lf-field"><span>I\'m interested in</span><select name="interest">' + optionsHtml + '</select></label>' +
     '<label class="lf-field"><span>Message *</span><textarea name="message" rows="6" required></textarea></label>' +
     '<button type="submit" class="lf-send">Send message</button>' +
-    '<p class="lf-note">Sending opens your email app with the message addressed to us.</p>';
+    '<p class="lf-note">Press send and your message goes straight to our inbox.</p>';
   bodyWrap.appendChild(pform);
   panel.appendChild(bodyWrap);
   document.body.appendChild(panel);
