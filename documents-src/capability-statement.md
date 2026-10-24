@@ -34,6 +34,6 @@
 ## Differentiators
 
 - **Practitioner-operated:** the operator is a practicing Clinical Application Specialist II working in a live clinic environment — the software and advice are grounded in current frontline workflows, not theory.
-- **Production-proven in-house:** SUDS v1.26.0 runs in production under AugustInnovations' own operation, with encryption at rest, audit logging, and multi-tenant isolation (separate instance, database, keys, and subdomain per tenant).
+- **Production-proven in-house:** SUDS v1.26.0 runs in production under AugustInnovations' own operation, with encryption at rest, audit logging, and single-tenant isolation (a separate server, instance, database, keys, and subdomain per customer).
 - **Regulated-industry discipline:** signed authorization before any security testing, staging and synthetic data only, 42 CFR Part 2 consent workflows built into the flagship product.
 - **Senior expertise on every engagement:** no hand-offs to junior staff — scoping, delivery, and support come from the same senior operator.

@@ -16,15 +16,15 @@ SUDS is built and operated by AugustInnovations LLC, a California LLC (Entity No
 
 ## Deployment model
 
-SUDS is multi-tenant software operated by AugustInnovations on one managed fleet — with strict per-tenant isolation:
+SUDS is deployed single-tenant — AugustInnovations operates one isolated server per customer:
 
-- Each tenant organization gets its **own instance/process, its own database, its own encryption keys, and its own subdomain**
-- Tenants never share a database with another organization
+- Each customer gets its **own server and process, its own database, its own encryption keys, and its own subdomain**
+- Customers never share a database with another organization
 - Hosting is included in every engagement; there is nothing for the buyer to install or maintain
 
 ## Security posture
 
-- Encryption at rest for tenant data
+- Encryption at rest for customer data
 - Tamper-evident audit logging of access and changes
 - 42 CFR Part 2 consent workflows enforced in the application, not left to policy
 - Role-based access with multi-factor authentication
