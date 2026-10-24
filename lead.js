@@ -74,7 +74,7 @@
   document.head.appendChild(style);
 
   /* ---------- shared lead logic ---------- */
-  var FORMSUBMIT_ENDPOINT = 'https://formsubmit.co/ajax/taugustincst@gmail.com';
+  var FORMSUBMIT_ENDPOINT = 'https://formsubmit.co/ajax/4be796ed0f91bce36114d479ca4bb566';
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   function fieldError(input, msg) {
