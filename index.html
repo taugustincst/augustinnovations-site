@@ -59,6 +59,11 @@
   .card p{margin:0 0 10px;font-size:16px}
   .tag{display:inline-block;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--teal-dark);background:#E3EFEA;border-radius:20px;padding:3px 11px;margin-bottom:12px}
   .card .go{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;font-size:15px}
+  .shots{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 6px}
+  .shots img{border:1px solid var(--line);border-radius:10px;display:block;height:auto}
+  .shots img.wide{width:100%}
+  .shots img.half{width:calc(50% - 4px)}
+  .shots img.portrait{width:220px;max-width:calc(50% - 4px)}
   ul.tight{margin:6px 0 0;padding-left:20px}
   ul.tight li{margin-bottom:7px}
   .band{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:54px;padding:10px 0 44px}
@@ -113,6 +118,7 @@
         <span class="tag">In production</span>
         <h3><a href="https://sudsdata.com/">SUDS</a></h3>
         <p>The data platform for California harm-reduction and substance-use disorder programs: street outreach, naloxone and supplies tracked by lot, referrals, 42 CFR Part 2 consent, and CalOMS and opioid-settlement reporting. Single-tenant deployments, encrypted, audit-logged, and live in production.</p>
+        <div class="shots"><img class="wide" src="assets/shots/sudsdata.jpg" alt="The SUDS website home page: harm-reduction and SUD program work, recorded once and reported everywhere it's owed" loading="lazy"><img class="half" src="assets/shots/suds-1.jpg" alt="Inside the SUDS application: the administrator home screen (sample data)" loading="lazy"><img class="half" src="assets/shots/suds-2.jpg" alt="Inside the SUDS application: the funder report screen (sample data)" loading="lazy"></div>
         <p class="go"><a href="https://sudsdata.com/">sudsdata.com →</a></p>
         <p class="go"><a href="#contact" data-lead-open data-lead-interest="SUDS">Message us →</a></p>
       </div>
@@ -120,6 +126,7 @@
         <span class="tag">Security</span>
         <h3><a href="https://clinicalperimeter.com/">Clinical Perimeter</a></h3>
         <p>Our security practice: white/gray-box web application penetration tests for healthcare software vendors, performed under signed authorization, on staging systems, with the guardrails a regulated industry demands.</p>
+        <div class="shots"><img class="wide" src="assets/shots/clinicalperimeter.jpg" alt="The Clinical Perimeter website home page: penetration testing for healthcare software, by someone who has run it" loading="lazy"></div>
         <p class="go"><a href="https://clinicalperimeter.com/">clinicalperimeter.com →</a></p>
         <p class="go"><a href="#contact" data-lead-open data-lead-interest="Clinical Perimeter">Message us →</a></p>
       </div>
@@ -127,12 +134,14 @@
         <span class="tag">Privacy tooling</span>
         <h3>CSeed</h3>
         <p>A local-only Windows application that de-identifies clinical documents — DOCX, PDF (with OCR), TXT, CSV, HL7, and FHIR — and seeds realistic synthetic data in their place, with consistent fake identities across a batch and an encrypted crosswalk. Nothing ever leaves the user's machine.</p>
+        <div class="shots"><img class="wide" src="assets/shots/cseed.jpg" alt="The CSeed desktop application: files-to-process queue, output folder and encrypted crosswalk options, and the Process button" loading="lazy"></div>
         <p class="go"><a href="#contact" data-lead-open data-lead-interest="CSeed">Message us →</a></p>
       </div>
       <div class="card">
         <span class="tag">Clinical informatics</span>
         <h3><a href="https://releasereaper.io/">ReleaseReaper</a></h3>
         <p>EMR release notes go in raw; change intelligence comes out. ReleaseReaper extracts every change from vendor release notes, categorizes and domain-tags it, scores its operational impact, and leads with the safety signals — delivered as a Clinical Ops Brief and exports your teams already use. Built from seven-plus years of living through EHR upgrade cycles.</p>
+        <div class="shots"><img class="wide" src="assets/shots/releasereaper.jpg" alt="The ReleaseReaper website home page: EMR release notes go in raw, change intelligence comes out" loading="lazy"></div>
         <p class="go"><a href="https://releasereaper.io/">releasereaper.io →</a></p>
         <p class="go"><a href="#contact" data-lead-open data-lead-interest="ReleaseReaper">Message us →</a></p>
       </div>
