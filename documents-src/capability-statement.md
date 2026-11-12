@@ -14,7 +14,7 @@
 | **Contact** | info@suds.systems |
 | **Web** | augustinnovations.io |
 
-**Founder & operator:** Taylor Augustin — Clinical Application Specialist II at Chapa-De Indian Health; 7+ years of clinical application systems experience (Cerner, Epic), eClinicalWorks since 2025; former Certified Surgical Technologist. AugustInnovations is founder-led: the person who scopes an engagement is the person who delivers it, supported by specialist subcontractors — always disclosed — when a project calls for them.
+**Founder & operator:** Taylor Augustin — Clinical Application Specialist II at a California community health center; 7+ years of clinical application systems experience (Cerner, Epic), eClinicalWorks since 2025; former Certified Surgical Technologist. AugustInnovations is founder-led: the person who scopes an engagement is the person who delivers it, supported by specialist subcontractors — always disclosed — when a project calls for them.
 
 ## Core competencies
 
