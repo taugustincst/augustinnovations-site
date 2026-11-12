@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clinical document de-identification engine — Case Study — AugustInnovations LLC</title>
+<meta name="description" content="Case study: an offline engine that replaces patient identifiers in clinical documents with consistent demo data while leaving every other word, value and image untouched.">
+<link rel="canonical" href="https://augustinnovations.io/showcase/clinical-deidentification.html">
+<link rel="icon" type="image/svg+xml" href="../logo.svg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AugustInnovations LLC">
+<meta property="og:url" content="https://augustinnovations.io/showcase/clinical-deidentification.html">
+<meta property="og:title" content="Clinical document de-identification engine — Case Study">
+<meta property="og:description" content="Case study: an offline engine that replaces patient identifiers in clinical documents with consistent demo data while leaving every other word, value and image untouched.">
+<meta name="twitter:card" content="summary">
+<style>
+  :root{
+    --navy:#16324A; --navy-deep:#0F2436; --teal:#177A6B; --teal-dark:#11604F;
+    --gold:#C9902E; --ink:#1C2733; --muted:#5A6B7A; --paper:#F7F5F0; --card:#FFFFFF;
+    --line:#E2DDD2; --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.65}
+  h1,h2,h3,.sans{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+  a{color:var(--teal-dark)}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  .narrow{max-width:820px}
+  header{background:var(--navy);color:#fff}
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:16px 0;flex-wrap:wrap;gap:10px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .brand img.logo{width:42px;height:42px;display:block}
+  .brand .mark{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:800;font-size:24px;letter-spacing:.4px;color:#fff;line-height:1}
+  .brand .mark span{color:var(--gold)}
+  .brand .by{font-size:13px;color:#B9C9D6;margin-top:3px}
+  nav a{color:#E7EEF3;text-decoration:none;margin-left:22px;font-size:15px;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+  nav a:hover{color:var(--gold)}
+  nav a.cta{background:var(--gold);color:var(--navy-deep);padding:8px 16px;border-radius:8px;font-weight:700}
+  .hero{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;padding:44px 0 50px}
+  .crumb{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13.5px;color:#9FB4C4;margin:0 0 16px}
+  .crumb a{color:#D7E3EC}
+  .hero .kicker{color:var(--gold)}
+  .hero h1{font-size:36px;line-height:1.2;margin:0 0 16px;font-weight:800}
+  .hero p.lede{font-size:19px;color:#D7E3EC;max-width:780px;margin:0}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px;max-width:900px}
+  .facts div{border:1px solid #2F4D66;border-radius:10px;padding:12px 16px}
+  .facts b{display:block;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:11.5px;letter-spacing:1.8px;text-transform:uppercase;color:#9FB4C4;margin-bottom:4px}
+  .facts span{font-size:15.5px;color:#E7EEF3}
+  @media (max-width:760px){.facts{grid-template-columns:1fr}.hero h1{font-size:29px}nav a{margin-left:14px}}
+  main section{padding:40px 0 0}
+  h2{font-size:24px;color:var(--navy);margin:0 0 10px;font-weight:800}
+  .kicker{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:2.5px;font-size:12.5px;color:var(--teal);font-weight:700;margin:0 0 10px}
+  main p{font-size:17px;margin:0 0 14px}
+  main ul{margin:4px 0 16px;padding-left:22px}
+  main li{margin-bottom:8px;font-size:16.5px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px 28px;margin-top:8px}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0 18px;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px}
+  .flow span{background:#E3EFEA;color:var(--teal-dark);border-radius:20px;padding:5px 13px;font-weight:700}
+  .flow i{font-style:normal;color:var(--muted)}
+  .note{font-size:15px;color:var(--muted)}
+  .next{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;font-size:15.5px;margin-top:40px;padding-top:22px;border-top:1px solid var(--line)}
+  footer{background:var(--navy-deep);color:#B9C9D6;margin-top:64px;padding:34px 0 40px;font-size:14.5px}
+  footer img.logo{width:20px;height:20px;vertical-align:-4px;margin-right:7px}
+  footer a{color:#E7EEF3}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap topbar">
+    <a class="brand" href="../index.html">
+      <img class="logo" src="../logo.svg" alt="AugustInnovations LLC logo">
+      <div>
+        <div class="mark">August<span>Innovations</span></div>
+        <div class="by">AugustInnovations LLC · Plumas Lake, California</div>
+      </div>
+    </a>
+    <nav>
+      <a href="../index.html#products">Products</a>
+      <a href="../index.html#showcase">Showcase</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#about">About</a>
+      <a href="../non-medical.html">Non-Medical Software</a>
+      <a class="cta" href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../index.html#showcase">Showcase</a> · Case study</p>
+    <p class="kicker">Privacy engineering</p>
+    <h1>Clinical document de-identification engine</h1>
+    <p class="lede">Realistic clinical documents are what training, demos and software testing need, and real patient data is exactly what they must never contain. This engine swaps identifiers for demo patients you choose and leaves the rest of the document as it was.</p>
+    <div class="facts">
+      <div><b>Stack</b><span>Python, PyMuPDF, Tesseract and PP-OCR, ONNX Runtime, Pyodide/WebAssembly</span></div>
+      <div><b>Runs on</b><span>Sealed Docker container, a single Windows .exe, or a browser tab</span></div>
+      <div><b>Status</b><span>Working tool; Windows package rebuilt by CI on every change</span></div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap narrow">
+  <section>
+    <p class="kicker">The problem</p>
+    <h2>Test data that still looks like a chart</h2>
+    <p>Teams that train staff, demo software or test interfaces need documents that look like the real thing: the same layouts, the same lab tables, the same scanned faxes and DICOM headers. Blacking out identifiers ruins them, and hand-editing does not scale. Generic redaction tools also tend to remove too much, so the document stops being useful, or too little, so it is not safe to share.</p>
+    <p>The brief was strict: change only text that could identify a person, keep every other word, value, image and layout element exactly where it was, and never let a file pass silently.</p>
+  </section>
+  <section>
+    <p class="kicker">What was built</p>
+    <h2>One engine, three ways to run it</h2>
+    <ul>
+      <li><b>Format coverage:</b> Word, Excel and PowerPoint edited at the XML level, text and scanned PDFs, multi-page TIFF and other images, DICOM (headers, UIDs and burned-in pixel text), Outlook .msg and .eml with attachments, HL7 v2, FHIR, CDA and plain text.</li>
+      <li><b>Demo data you choose:</b> a seed file or spreadsheet of demo patients, providers and an organization. Each real person maps to the same demo person across the whole batch, values are matched by meaning rather than spelling (a birth date is replaced in every format it appears in), and other dates shift by one offset so timelines stay coherent.</li>
+      <li><b>Surrogates that blend in:</b> replacement text on scans is drawn in the closest matching font, weight, size, ink colour, blur and grain.</li>
+      <li><b>Three runtimes:</b> a network-less, read-only Docker container; a single Windows executable; and the same Python engine running entirely inside a browser tab through WebAssembly.</li>
+      <li><b>Agent access:</b> the engine can run as an MCP tool server, so Microsoft Copilot agents can run batches through it.</li>
+    </ul>
+  </section>
+  <section>
+    <p class="kicker">Approach</p>
+    <h2>Nothing passes silently</h2>
+    <div class="flow"><span>Detect</span><i>→</i><span>Seed</span><i>→</i><span>Rewrite in place</span><i>→</i><span>Re-read output</span><i>→</i><span>Leak check</span><i>→</i><span>Status</span></div>
+    <ul>
+      <li><b>Every output is re-read.</b> Text layers, XML parts, DICOM headers and a fresh OCR of rendered pages are searched for every original value found in the batch.</li>
+      <li><b>Four honest outcomes.</b> Each file ends as processed, needs review, failed the leak check (renamed so it cannot pass as clean), or could not be processed. Reports carry counts and positions, never original values.</li>
+      <li><b>Rules first, model second.</b> Labelled fields, dictionaries and context rules catch the common layouts; an optional open clinical language model (a BERT model trained for de-identification, run offline through ONNX) adds names in free text. It can only add detections, and it re-checks itself on load and switches off if its answers drift.</li>
+      <li><b>Optional encrypted crosswalk.</b> When a batch needs a way back to the source, the mapping is sealed with AES-256-GCM under a passphrase-derived key (PBKDF2, 600,000 iterations), refused inside the output folder, and readable by the CSeed desktop app too.</li>
+      <li><b>Tested on invented data only.</b> The automated suite runs every format on synthetic fixtures, on Linux and Windows in CI, and leak-checks the built Windows executable on a fixture batch.</li>
+    </ul>
+  </section>
+  <section>
+    <p class="kicker">What it shows</p>
+    <h2>Privacy as an architecture decision</h2>
+    <p>The safest place for patient data is a place it never leaves. This project treats that as a design constraint rather than a policy: no network in the container, nothing written but the output, a browser build whose content security policy forbids outside contact, and verification that trusts the finished file rather than the code that produced it.</p>
+    <p>It also shows restraint about claims. The documentation is explicit that this is surrogate replacement for test, demo and training data, that it does not certify HIPAA de-identification, and that a human spot-check stays in the loop.</p>
+    <p class="note">This page describes the tool's design. No real patient data appears on it or in the tool's test suite.</p>
+  </section>
+
+  <div class="next">
+    <a href="../index.html#showcase">← All case studies</a>
+    <a href="software-factory.html">Next: Software factory →</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><img class="logo" src="../logo.svg" alt="">© 2026 AugustInnovations LLC · Plumas Lake, California · D-U-N-S® 12-343-3746</p>
+    <p>Products: <a href="https://sudsdata.com/">SUDS</a> · <a href="https://clinicalperimeter.com/">Clinical Perimeter</a> · <a href="https://releasereaper.io/">ReleaseReaper</a> · <a href="https://inkspireai.xyz/">Inkspire</a> · <a href="../non-medical.html">Non-Medical Software</a> · <a href="../documents/index.html">Business documents</a></p>
+  </div>
+</footer>
+</body>
+</html>
