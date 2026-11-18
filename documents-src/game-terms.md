@@ -8,7 +8,7 @@ These games are made and sold by AugustInnovations LLC, a California limited lia
 
 ## 2. What you get
 
-Each game is free to install. Most include one optional in-app purchase, named in the store listing, that opens the rest of that game. It is a one-time purchase: there is no subscription, no consumable currency, no loot box and no advertising. Ironhold Tower Defense is sold as a paid download and has nothing to buy inside it. Bubble Pop for Kids has no purchases at all.
+Each game is free to install. Most include one optional in-app purchase, named in the store listing, that opens the rest of that game. It is a one-time purchase: there is no subscription, no consumable currency, no loot box and no advertising. If you bought Ironhold Tower Defense when it was a paid download, you keep the whole game. Bubble Pop for Kids has no purchases at all.
 
 A purchase gives you a personal, non-transferable licence to play the unlocked game on devices signed in to the Google account that bought it. It does not transfer ownership of the game or its content.
 
