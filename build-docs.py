@@ -24,6 +24,8 @@ DOCS = [
      "The standard rules governing every Clinical Perimeter engagement, executed before testing begins."),
     ("testing-authorization-template", "Testing Authorization — Template",
      "The written client authorization under which Clinical Perimeter performs security testing."),
+    ("game-terms", "Game Terms of Service",
+     "The terms for AugustInnovations games on Google Play: who sells them, what a purchase includes, refunds, and your rights."),
 ]
 
 SHELL = """<!DOCTYPE html>
@@ -102,7 +104,7 @@ items = "\n".join(
     f'<h3><a href="{slug}.html">{title}</a></h3><p>{desc}</p>' for slug, title, desc in DOCS
 )
 index_body = f"""<h1>Business documents</h1>
-<p>The public document set for AugustInnovations LLC and its products — SUDS, CSeed, and Clinical Perimeter.
+<p>The public document set for AugustInnovations LLC and its products — SUDS, CSeed, Clinical Perimeter, and the games.
 Documents not listed here (including Form W-9 and executed agreements) are provided on request:
 <a href="mailto:info@suds.systems">info@suds.systems</a>.</p>
 <div class="doclist">{items}</div>"""
